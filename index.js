@@ -4,6 +4,7 @@ const exp = require("constants");
 // import the needed node_modules.
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 
 const {
   addNewAd,
@@ -33,6 +34,7 @@ express()
 
   // This will give us will log more info to the console. see https://www.npmjs.com/package/morgan
   .use(morgan("tiny"))
+  .use(cors())
   .use(express.json());
 if (process.env.NODE_ENV === "production") {
   express().use(express.static("client/build"));
