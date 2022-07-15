@@ -33,8 +33,9 @@ express()
   // --------------------------------------------------------------------------------
 
   // This will give us will log more info to the console. see https://www.npmjs.com/package/morgan
-  .use(morgan("tiny"))
   .use(cors())
+  .use(morgan("tiny"))
+
   .use(express.json());
 if (process.env.NODE_ENV === "production") {
   express().use(express.static("client/build"));
