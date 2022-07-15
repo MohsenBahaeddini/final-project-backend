@@ -41,6 +41,13 @@ if (process.env.NODE_ENV === "production") {
   express().use(express.static("client/build"));
 }
 // Any requests for static files will go into the public folder
+express().all("*", function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
 express()
   .use(express.static("public"))
 
