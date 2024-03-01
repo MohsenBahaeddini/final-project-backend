@@ -14,6 +14,10 @@ const options = {
   useUnifiedTopology: true,
 };
 
+
+
+
+
 // get all ads in db
 const getAds = async (req, res) => {
   try {
