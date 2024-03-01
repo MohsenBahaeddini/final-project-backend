@@ -20,7 +20,7 @@ const getAds = async (req, res) => {
     const client = new MongoClient(MONGO_URI, options);
     const page = req.query.page;
     console.log(page);
-    const limit = 6;
+    const limit = 9;
     await client.connect();
     const db = client.db("mba");
 
